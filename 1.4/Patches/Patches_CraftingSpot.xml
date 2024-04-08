@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Medieval Component Crafting -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CraftingSpot"]/recipes</xpath>
+        <value>
+			<li>DankPyon_Make_ComponentBasic</li>
+        </value>
+    </Operation>
+
+</Patch>

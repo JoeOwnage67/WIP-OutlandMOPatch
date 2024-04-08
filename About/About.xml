@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Outland x Medieval Overhaul Patch</name>
+	<author>Joe Daly</author>
+	<url>https://github.com/JoeOwnage67/OutlandMOPatch/</url>
+	<supportedVersions>
+			<li>1.4</li>    		
+			<li>1.5</li>
+    </supportedVersions>
+	<packageId>JoeDaly.OutlandMOPatch</packageId>
+  
+	<loadAfter>
+		<li>Neronix17.Outland.Core</li>
+		<li>DankPyon.Medieval.Overhaul</li>
+	</loadAfter>
+
+	<modDependencies>
+	  <li>
+		  <packageId>DankPyon.Medieval.Overhaul</packageId>
+		  <displayName>Medieval Overhaul</displayName>
+	  </li>	  
+	  <li>
+		  <packageId>Neronix17.Outland.Core</packageId>
+		  <displayName>Outland - Core</displayName>
+	  </li>			
+	</modDependencies>
+	<description>This is a patch to remove redundancies and make these two mods play nice together.</description>
+</ModMetaData>
+

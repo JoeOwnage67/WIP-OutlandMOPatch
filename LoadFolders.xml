@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="DankPyon.Medieval.Overhaul">1.5/Mods/MedievalOverhaul</li>
+	</v1.5>
+	<v1.4>
+		<li>/</li>
+		<li>1.4</li>
+		<li IfModActive="DankPyon.Medieval.Overhaul">1.4/Mods/MedievalOverhaul</li>
+	</v1.4>	
+</loadFolders>
