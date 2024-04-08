@@ -14,6 +14,23 @@
             <li Class="PatchOperationRemove"> <!-- Remove Outland_Gun_PactCatapult -->
 				<xpath>Defs/ThingDef[defName="Outland_Gun_PactCatapult"]</xpath>
 			</li>	
+
+			 <!-- Change Outland Components to MO components -->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Outland_PactCrossbow"]/costList</xpath>
+					<value>
+						<costList>
+							<WoodLog>35</WoodLog>
+							<DankPyon_ComponentBasic>1</DankPyon_ComponentBasic>
+						</costList>
+					</value>
+			</li>
+
+
+
+
+
+
 		</operations>				
 	</match>
 </Operation>		
