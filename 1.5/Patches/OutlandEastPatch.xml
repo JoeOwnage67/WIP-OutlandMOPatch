@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Outland - Eastborn Empire</li> <!-- Neronix17.Outland.EastbornEmpire -->
+	</mods>
+	<match Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+        <!-- Remove Outland guns --> 
+            <li Class="PatchOperationRemove"> <!-- Remove Matchlock Pistol -->
+				<xpath>Defs/ThingDef[defName="Outland_EastbornMatchlock"]</xpath>
+			</li>
+            <li Class="PatchOperationRemove"> <!-- Remove Outland_MatchlockPistolBullet -->
+				<xpath>Defs/ThingDef[defName="Outland_MatchlockPistolBullet"]</xpath>
+			</li>	
+		</operations>				
+	</match>
+</Operation>		
+</Patch>

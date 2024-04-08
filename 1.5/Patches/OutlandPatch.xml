@@ -110,6 +110,24 @@
 						</recipeUsers>
 					</value>
 			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="OutlandApparelMakeableBase"]/recipeMaker/recipeUsers</xpath>
+					<value>
+						<recipeUsers>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+							<li>DankPyon_TailorsBench</li>
+						</recipeUsers>
+					</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="OutlandHelmetSmithableBase"]/recipeMaker/recipeUsers</xpath>
+					<value>
+						<recipeUsers>
+							<li>DankPyon_Anvil</li>
+						</recipeUsers>
+					</value>
+			</li>
 
 		<!-- Remove Outland_Grindstone -->
 		 	<li Class="PatchOperationRemove"> 
