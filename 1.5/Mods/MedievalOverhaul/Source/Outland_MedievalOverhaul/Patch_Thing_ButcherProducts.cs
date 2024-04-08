@@ -15,12 +15,12 @@ namespace Outland_MedievalOverhaul
 	[HarmonyPatch("ButcherProducts")]
 	public class RemoveBoneSpawnPatch
 	{
-		[HarmonyAfter(new string[] { "lalapyhon.rimworld.medievaloverhaul" })]
+		[HarmonyAfter(new string[] { "Neronix17.Outland.Core" })]
 		public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, Pawn butcher, float efficiency)
 		{
 			foreach (Thing t in result)
 			{
-				if (t.def.defName != "DankPyon_Bone")
+				if (t.def.defName != "Outland_Bones")
 				{
 					yield return t;
 				}
