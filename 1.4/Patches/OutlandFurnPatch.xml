@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Outland - Furniture</li> <!-- Neronix17.Outland.FurnitureAndDecor -->
+	</mods>
+	<match Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+        <!-- Change Outland Components to MO components -->
+          	<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Outland_StoneOilStreetLamp"]/costList</xpath>
+					<value>
+						<costList>
+							<Steel>40</Steel>
+							<DankPyon_ComponentBasic>2</DankPyon_ComponentBasic>
+						</costList>
+					</value>
+			</li> 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Outland_OilStreetLamp"]/costList</xpath>
+					<value>
+						<costList>
+							<Steel>40</Steel>
+							<DankPyon_ComponentBasic>2</DankPyon_ComponentBasic>
+						</costList>
+					</value>
+			</li> 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="OutlandOilWallLanternBase"]/costList</xpath>
+					<value>
+						<costList>
+							<WoodLog>5</WoodLog>
+							<DankPyon_ComponentBasic>2</DankPyon_ComponentBasic>
+						</costList>
+					</value>
+			</li> 
+		</operations>				
+	</match>
+</Operation>		
+</Patch>
