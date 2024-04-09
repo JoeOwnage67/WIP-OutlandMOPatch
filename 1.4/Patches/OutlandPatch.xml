@@ -8,29 +8,35 @@
 		<success>Normal</success>
 		<operations>
 
-        <!-- Change Outland Components to MO components -->
-            <li Class="PatchOperationRemove"> <!-- Remove Outland Components -->
-				<xpath>Defs/ThingDef[defName="Outland_ComponentMedieval"]</xpath>
-			</li>
-            <li Class="PatchOperationRemove"> <!-- Remove Outland Component Recipe -->
-				<xpath>Defs/RecipeDef[defName="Outland_MakeComponentMedieval"]</xpath>
-			</li>	
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Outland_Kiln"]/costList</xpath>
+		<!-- Recipes use MO bones instead of Outland Bones -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef/ingredients/li/filter/thingDefs[li="Outland_Bones"]/li</xpath>
 					<value>
-						<costList>
-							<Steel>10</Steel>
-							<DankPyon_ComponentBasic>1</DankPyon_ComponentBasic>
-						</costList>
+						<li>DankPyon_Bone</li>
 					</value>
+				</li>	
+
+			<!-- change costList bones to MO bones -->	
+				<li Class="PatchOperationSetName">
+					<xpath>Defs/ThingDef/costList/Outland_Bones</xpath>
+					<name>DankPyon_Bone</name>  
+				</li>			
+
+        <!-- Change Outland Components to MO components -->
+		
+  			<li Class="PatchOperationSetName">
+    			<xpath>Defs/ThingDef/costList/Outland_ComponentMedieval</xpath>
+    			<name>DankPyon_ComponentBasic</name>  
 			</li>
 
         <!-- Remove Outland turrets/ballistas/etc --> 
-            <li Class="PatchOperationRemove"> <!-- Remove Outland Defense Platforms Research -->
+		<!-- Items commented out are called for in the DefOf -->
+
+            <!-- li Class="PatchOperationRemove"> 
 				<xpath>Defs/ResearchProjectDef[defName="Outland_DefencePlatforms"]</xpath>
-			</li>	
-            <li Class="PatchOperationRemove"> <!-- Remove Outland_Ballista -->
-				<xpath>Defs/ThingDef[defName="Outland_Ballista"]</xpath>
+			</li> -->	
+            <!-- <li Class="PatchOperationRemove"> 
+				<xpath>Defs/ThingDef[defName="Outland_Ballista"]</xpath> -->
 			</li>
             <li Class="PatchOperationRemove"> <!-- Remove Outland_Gun_BallistaTurret -->
 				<xpath>Defs/ThingDef[defName="Outland_Gun_BallistaTurret"]</xpath>
@@ -44,9 +50,9 @@
 			<li Class="PatchOperationRemove"> <!-- Remove Outland_Bullet_BoltThrower -->
 				<xpath>Defs/ThingDef[defName="Outland_Bullet_BoltThrower"]</xpath>
     		</li>
-			<li Class="PatchOperationRemove"> <!-- Remove Outland_Mangonel -->
+			<!-- <li Class="PatchOperationRemove"> 
 				<xpath>Defs/ThingDef[defName="Outland_Mangonel"]</xpath>
-    		</li>
+    		</li> -->
 			<li Class="PatchOperationRemove"> <!-- Remove Outland_Gun_Mangonel -->
 				<xpath>Defs/ThingDef[defName="Outland_Gun_Mangonel"]</xpath>
     		</li>
@@ -56,87 +62,39 @@
 			<li Class="PatchOperationRemove"> <!-- Remove Outland_Bullet_Ballista -->
 				<xpath>Defs/ThingDef[defName="Outland_Bullet_Ballista"]</xpath>
 			</li>
-			<li Class="PatchOperationRemove"> <!-- Remove Outland_Make_BallistaBolts -->
+			<!-- <li Class="PatchOperationRemove"> 
 				<xpath>Defs/RecipeDef[defName="Outland_Make_BallistaBolts"]</xpath>
-			</li>
-			<li Class="PatchOperationRemove"> <!-- Remove Outland_Ammo_RoundShot -->
+			</li> -->
+			<!-- <li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName="Outland_Ammo_RoundShot"]</xpath>
-			</li>
+			</li> -->
 			<li Class="PatchOperationRemove"> <!-- Outland_Bullet_RoundShot -->
 				<xpath>Defs/ThingDef[defName="Outland_Bullet_RoundShot"]</xpath>
 			</li>
-			<li Class="PatchOperationRemove"> <!-- Remove Outland_Make_RoundShots -->
+			<!-- <li Class="PatchOperationRemove">
 				<xpath>Defs/RecipeDef[defName="Outland_Make_RoundShots"]</xpath>
-			</li>           
+			</li> -->           
 
         <!-- Remove Outland Basic Workbench, put recipes on MO workbench -->
             <li Class="PatchOperationRemove"> <!-- Remove Outland_BasicWorkbench -->
 				<xpath>Defs/ThingDef[defName="Outland_BasicWorkbench"]</xpath>
     		</li>
 
-  		<!-- Remove Outland_Forge, put recipes on MO workbench -->
-		 	<li Class="PatchOperationRemove"> <!-- Remove Outland_Forge -->
-				<xpath>Defs/ThingDef[defName="Outland_Forge"]</xpath>
-    		</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="OutlandArmorSmithableBase"]/recipeMaker/recipeUsers</xpath>
-					<value>
-						<recipeUsers>
+  		<!-- Outland_Forge inherit recipes from DankPyon_Anvil (forge is called for in DefOf)-->
+			<li Class="PatchOperationAdd">
+            	<xpath>Defs/ThingDef[defName="Outland_Forge"]/modExtensions</xpath>
+            	<value>
+					<li Class="RecipeInheritance.ThingDefExtension">
+						<inheritRecipesFrom>
 							<li>DankPyon_Anvil</li>
-						</recipeUsers>
-					</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="OutlandBaseMakeableBow"]/recipeMaker/recipeUsers</xpath>
-					<value>
-						<recipeUsers>
-							<li>DankPyon_Anvil</li>
-						</recipeUsers>
-					</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="OutlandBaseMakeableGun"]/recipeMaker/recipeUsers</xpath>
-					<value>
-						<recipeUsers>
-							<li>DankPyon_Anvil</li>
-						</recipeUsers>
-					</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="OutlandBaseMeleeWeapon"]/recipeMaker/recipeUsers</xpath>
-					<value>
-						<recipeUsers>
-							<li>DankPyon_Anvil</li>
-						</recipeUsers>
-					</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="OutlandApparelMakeableBase"]/recipeMaker/recipeUsers</xpath>
-					<value>
-						<recipeUsers>
-							<li>ElectricTailoringBench</li>
-							<li>HandTailoringBench</li>
-							<li>DankPyon_TailorsBench</li>
-						</recipeUsers>
-					</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="OutlandHelmetSmithableBase"]/recipeMaker/recipeUsers</xpath>
-					<value>
-						<recipeUsers>
-							<li>DankPyon_Anvil</li>
-						</recipeUsers>
-					</value>
+						</inheritRecipesFrom>
+					</li>			
+				</value>
 			</li>
 
 		<!-- Remove Outland_Grindstone -->
 		 	<li Class="PatchOperationRemove"> 
 				<xpath>Defs/ThingDef[defName="Outland_Grindstone"]</xpath>
-    		</li>
-
-		<!-- Remove Outland_ResearchingSpot -->
-		 	<li Class="PatchOperationRemove"> 
-				<xpath>Defs/ThingDef[defName="Outland_ResearchingSpot"]</xpath>
     		</li>
 
 		<!-- Remove Outland Tent -->
@@ -146,7 +104,6 @@
 		 	<li Class="PatchOperationRemove"> 
 				<xpath>Defs/ThingDef[defName="Outland_TentWall"]</xpath>
     		</li>
-
 
 		</operations>				
 	</match>

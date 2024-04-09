@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Outland - Vathun Nobles</li> <!-- Neronix17.Outland.VathunNobles -->
+	</mods>
+	<match Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+        <!-- Remove Outland guns --> 
+            <li Class="PatchOperationRemove"> <!-- Outland_VathunAxeGun -->
+				<xpath>Defs/ThingDef[defName="Outland_VathunAxeGun"]</xpath>
+			</li>
+            <li Class="PatchOperationRemove"> <!-- Outland_AxeGunBullet -->
+				<xpath>Defs/ThingDef[defName="Outland_AxeGunBullet"]</xpath>
+			</li>
+            
+		</operations>				
+	</match>
+</Operation>		
+</Patch>

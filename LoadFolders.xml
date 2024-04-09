@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <loadFolders>
-	<v1.5>
+	<!--<v1.5>
 		<li>/</li>
 		<li>1.5</li>
 		<li IfModActive="DankPyon.Medieval.Overhaul">1.5/Mods/MedievalOverhaul</li>
-	</v1.5>
+	</v1.5> -->
 	<v1.4>
 		<li>/</li>
 		<li>1.4</li>
-		<li IfModActive="DankPyon.Medieval.Overhaul">1.4/Mods/MedievalOverhaul</li>
+		<li IfModActive="Neronix17.Outland.EastbornEmpire">1.4/Mods/OutlandEast</li>
+	</v1.4>	
+	<v1.4>
+		<li>/</li>
+		<li>1.4</li>
+		<li IfModActive="Neronix17.Outland.RedburnPact">1.4/Mods/OutlandRed</li>
+	</v1.4>	
+	<v1.4>
+		<li>/</li>
+		<li>1.4</li>
+		<li IfModActive="Neronix17.Outland.VathunNobles">1.4/Mods/OutlandVath</li>
+	</v1.4>	
+	<v1.4>
+		<li>/</li>
+		<li>1.4</li>
+		<li IfModActive="sihv.rombones">1.4/Mods/RoMBones</li>
 	</v1.4>	
 </loadFolders>

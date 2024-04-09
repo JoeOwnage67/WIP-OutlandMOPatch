@@ -5,7 +5,7 @@
 	<url>https://github.com/JoeOwnage67/OutlandMOPatch/</url>
 	<supportedVersions>
 			<li>1.4</li>    		
-			<li>1.5</li>
+			<!-- <li>1.5</li> -->
     </supportedVersions>
 	<packageId>JoeDaly.OutlandMOPatch</packageId>
   
@@ -24,6 +24,6 @@
 		  <displayName>Outland - Core</displayName>
 	  </li>			
 	</modDependencies>
-	<description>This is a patch to remove redundancies and make these two mods play nice together.</description>
+	<description>This is a patch to remove some redundant buildings and to make Medieval Overhaul and Outland play nice together. Medieval Overhaul bones will be used instead of Outland Bones. There is also support for MO bones to replace Rim of Madness bones if that mod is active.</description>
 </ModMetaData>
 

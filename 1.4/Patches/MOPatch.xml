@@ -7,7 +7,7 @@
 	<match Class="PatchOperationSequence">
 		<success>Normal</success>
 		<operations>
-		<!-- Make Workbench Inherit Crafting Spot Recipes -->
+		<!-- DankPyon_Workbench Inherit Crafting Spot Recipes -->
 			<li Class="PatchOperationAdd">
             	<xpath>Defs/ThingDef[defName="DankPyon_Workbench"]</xpath>
             	<value>
@@ -26,6 +26,20 @@
 					<description> A work table equipped with tools for crafting and designing items. Crafts anything you can usually craft at a Crafting Spot, and more.</description>
 				</value>
 			</li>	
+
+		<!-- DankPyon_Anvil inherit recipes from Outland_Forge -->
+			<li Class="PatchOperationAdd">
+            	<xpath>Defs/ThingDef[defName="DankPyon_Anvil"]/modExtensions</xpath>
+            	<value>
+					<modExtensions>
+						<li Class="RecipeInheritance.ThingDefExtension">
+							<inheritRecipesFrom>
+								<li>Outland_Forge</li>
+							</inheritRecipesFrom>
+						</li>	
+					</modExtensions>		
+				</value>
+			</li>
 		</operations>				
 	</match>
 </Operation>		

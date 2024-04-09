@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Rim of Madness - Bones</li> <!-- sihv.rombones -->
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+				<!-- Recipes use MO bones instead of ROM Bones -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef/ingredients/li/filter/thingDefs[li="BoneItem"]/li</xpath>
+					<value>
+						<li>DankPyon_Bone</li>
+					</value>
+				</li>	
+
+				<!-- change costList bones to MO bones -->	
+				<li Class="PatchOperationSetName">
+					<xpath>Defs/ThingDef/costList/BoneItem</xpath>
+					<name>DankPyon_Bone</name>  
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>
